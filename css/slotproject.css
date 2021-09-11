@@ -1,0 +1,287 @@
+body{
+  margin: 0px;
+  left: 0px;
+  padding: 0px;
+
+  background: #1f513b;
+  background: linear-gradient(to top , #000, #1f513b) fixed;
+}
+
+#blind{
+  position: absolute;
+  visibility: hidden;
+  background: #ff1111;
+  width: 100%; 
+  height: 100%; 
+  z-index: 99;
+  margin: 0px;
+  padding: 0px;
+  top:  0px;
+}
+
+/*
+#top{
+  width: 100%; 
+  height: 32px; 
+  background-color: #000;
+  border-radius:6px; 
+  padding: 5px;
+  margin: 5px;
+  left: 0px;
+}
+
+.newButton{
+  right: 100px;
+  width: 100px;
+  height: 30px;
+  border-radius:  6px;
+  text-align: center;
+  border: solid 1px #eee;
+  cursor: pointer; 
+}
+
+.buttonLabel{
+    color: #eee;
+    font-size: 14px;
+    text-align: middle;
+    line-height: 26px; 
+}
+*/
+
+#content{
+  margin: 10px;
+}
+
+#slot_machine_main {
+  width: 100%;
+  height: 610px;
+  /*background-color: #aaa;*/
+  margin: 0px;
+  padding: 0px;
+  left: 0px;
+
+}
+
+
+#slot_machine_box {
+  /*margin: 5% auto 0 auto;
+  */
+  positon :relative;
+  /*background-color: #888;*/
+  padding: 0px;
+  width: 600px;
+  margin: 0px;
+
+  -webkit-transform-origin:0% 10%;
+  transform-origin:0% 10%;
+}
+
+#slot_machine_img {
+  position: relative;
+  /*background-color: #444;*/
+  left: 0px;
+  padding: 0px;
+  margin: 0px;
+
+}
+
+#slot-machine {
+  position: absolute;
+  top: 130px;
+  padding: 0px;
+  margin: 0px;
+  transform: scale(0.7, 0.65);
+}
+
+#totalCredits {
+  position: absolute;
+  top: 520px;
+  left: 240px;
+  color: #fff;
+  font-style: sans-serif;
+  font-size: 20px;
+}
+
+#resetBtn{
+  position: absolute;
+  top: 0px;
+
+}
+
+#resetBtn:active {
+  transform: scale(0.95);
+}
+
+
+
+.spinBtnBox{
+  display: inline-block;
+  position: relative;
+
+  margin: 15px 2px;
+}
+
+.spinBtnDiv{
+  position: relative;
+}
+
+.spinBtn{
+  height: 70px;
+  width: 200px;
+  margin: 10px;
+  position: relative;
+}
+
+.spinBtnCredit{
+  position: absolute; 
+  top:22px; 
+  left:45px; 
+  font-size: 30px; 
+  color:#fff
+}
+
+
+
+.wager {
+  width: 90px;
+  margin: 10px;
+}
+
+.wager-clickable {
+  margin: 15px 2px;
+}
+
+.wager-clickable:hover {
+  transform: scale(1.10);
+}
+
+.spinBtn:active{
+  transform: scale(0.9);
+}
+
+#earn-div{
+  margin-top: 0px;
+  margin-bottom: 5px;
+}
+
+#earn-img-box150, #earn-img-box50, #earn-img-box20, #earn-img-box10, #earn-img-box5,  #earn-img-box2{
+  display: inline-block;
+  width: 120px;
+  height: 20px;
+  margin-bottom: 6px;
+
+  background-color: #fff;
+  border: 5px solid #fff;
+  border-radius: 5px;
+
+  box-shadow: 1px 1px 3px 1px;
+}
+
+#earn-img-box150:hover, #earn-img-box50:hover, #earn-img-box20:hover, #earn-img-box10:hover, #earn-img-box5:hover,  #earn-img-box2:hover{
+  transform: scale(1.2);
+}
+
+#earn-table{
+  
+}
+
+#earn-img{
+  height: 20px;
+}
+
+#earn-lb{
+  font-size: 15px;
+  font-family: sans-serif;
+  font-weight: bold;
+  color: #666;
+  margin-left: 5px;
+  line-height: 20px;
+}
+
+#earn{
+
+  display: inline-block;
+}
+
+
+
+/*  
+#playButton, #playButtonFixed {
+  display: block;
+  margin: 0 auto;    
+}
+*/
+
+  .blink {
+    -webkit-animation: blink-text 800ms linear infinite;
+    -moz-animation: blink-text 800ms linear infinite;
+    -ms-animation: blink-text 800ms linear infinite;
+    -o-animation: blink-text 800ms linear infinite;
+     animation: blink-text 1000ms linear infinite;
+    visibility: visible; 
+  }
+  @-webkit-keyframes blink-text {
+    0% { color: black; opacity: 1; }
+    20% { color: black;opacity: .8; }
+    30% { color: black;opacity: .6; }
+    40% { color: black;opacity: .4; }
+    50% { color: black;opacity: .2; }
+    60% { color: black;opacity: 0; }
+    70% { color: black;opacity: .2; }
+    80% { color: black;opacity: .4; }
+    90% { color: black;opacity: .6; }
+    98% { color: black;opacity: .8; }
+    100% { color: black;opacity: 1; }
+  }
+  @-moz-keyframes blink-text {
+    0% { color: black; opacity: 1; }
+    20% { color: black;opacity: .8; }
+    30% { color: black;opacity: .6; }
+    40% { color: black;opacity: .4; }
+    50% { color: black;opacity: .2; }
+    60% { color: black;opacity: 0; }
+    70% { color: black;opacity: .2; }
+    80% { color: black;opacity: .4; }
+    90% { color: black;opacity: .6; }
+    98% { color: black;opacity: .8; }
+    100% { color: black;opacity: 1; }
+  }
+  @-ms-keyframes blink-text {
+    0% { color: black; opacity: 1; }
+    20% { color: black;opacity: .8; }
+    30% { color: black;opacity: .6; }
+    40% { color: black;opacity: .4; }
+    50% { color: black;opacity: .2; }
+    60% { color: black;opacity: 0; }
+    70% { color: black;opacity: .2; }
+    80% { color: black;opacity: .4; }
+    90% { color: black;opacity: .6; }
+    98% { color: black;opacity: .8; }
+    100% { color: black;opacity: 1; }
+  }
+  @-o-keyframes blink-text {
+    0% { color: black; opacity: 1; }
+    20% { color: black;opacity: .8; }
+    30% { color: black;opacity: .6; }
+    40% { color: black;opacity: .4; }
+    50% { color: black;opacity: .2; }
+    60% { color: black;opacity: 0; }
+    70% { color: black;opacity: .2; }
+    80% { color: black;opacity: .4; }
+    90% { color: black;opacity: .6; }
+    98% { color: black;opacity: .8; }
+    100% { color: black;opacity: 1; }
+  }
+  @keyframes blink-text {
+    0% { color: black; opacity: 1; }
+    20% { color: black;opacity: .8; }
+    30% { color: black;opacity: .6; }
+    40% { color: black;opacity: .4; }
+    50% { color: black;opacity: .2; }
+    60% { color: black;opacity: 0; }
+    70% { color: black;opacity: .2; }
+    80% { color: black;opacity: .4; }
+    90% { color: black;opacity: .6; }
+    98% { color: black;opacity: .8; }
+    100% { color: black;opacity: 1; }
+  }
