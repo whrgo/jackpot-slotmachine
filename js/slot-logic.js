@@ -1,99 +1,101 @@
 const symbols = [
-    {
-      title: 'threeBar',
-      position: 100,
-      weight: 2
-    },
-    {
-      title: 'oneBar',
-      position: 300,
-      weight: 6
-    },
-    {
-      title: 'twoBar',
-      position: 500,
-      weight: 5
-    },
-    {
-      title: 'seven',
-      position: 700,
-      weight: 1
-    },
-    {
-      title: 'cherry',
-      position: 900,
-      weight: 3
-    }
-  ]
+  {
+    title: "threeBar",
+    position: 100,
+    weight: 2,
+  },
+  {
+    title: "oneBar",
+    position: 300,
+    weight: 6,
+  },
+  {
+    title: "twoBar",
+    position: 500,
+    weight: 5,
+  },
+  {
+    title: "seven",
+    position: 700,
+    weight: 1,
+  },
+  {
+    title: "cherry",
+    position: 900,
+    weight: 3,
+  },
+];
 
 const reels = [
-    {
-        imageSrc: './images/reel-strip125.png',
-        symbols: symbols
-    },
-    {
-        imageSrc: './images/reel-strip125.png',
-        symbols: symbols
-    },
-    {
-        imageSrc: './images/reel-strip125.png',
-        symbols: symbols
-    }
+  {
+    imageSrc: "./images/reel-strip125.png",
+    symbols: symbols,
+  },
+  {
+    imageSrc: "./images/reel-strip125.png",
+    symbols: symbols,
+  },
+  {
+    imageSrc: "./images/reel-strip125.png",
+    symbols: symbols,
+  },
 ];
 
 const winningOptions = {
-    ThreeBar : {
-        isWinner: (payLine) => {
-            return _.isEqual(["threeBar", "threeBar", "threeBar"], payLine);
-        },
-        points: 10
+  ThreeBar: {
+    isWinner: (payLine) => {
+      return _.isEqual(["threeBar", "threeBar", "threeBar"], payLine);
     },
-    ThreeSeven : {
-        isWinner: (payLine) => {
-            return _.isEqual(["seven", "seven", "seven"], payLine)
-        },
-        points: 50
+    points: 60,
+  },
+  ThreeSeven: {
+    isWinner: (payLine) => {
+      return _.isEqual(["seven", "seven", "seven"], payLine);
     },
-    ThreeCherries : {
-        isWinner: (payLine) => {
-            return _.isEqual(["cherry", "cherry", "cherry"], payLine)
-        },
-        points: 150
+    points: 300,
+  },
+  ThreeCherries: {
+    isWinner: (payLine) => {
+      return _.isEqual(["cherry", "cherry", "cherry"], payLine);
     },
-    ThreeTwoBar : {
-        isWinner: (payLine) => {
-            return _.isEqual(["twoBar", "twoBar", "twoBar"], payLine)
-        },
-        points:  5
+    points: 1500,
+  },
+  ThreeTwoBar: {
+    isWinner: (payLine) => {
+      return _.isEqual(["twoBar", "twoBar", "twoBar"], payLine);
     },
-    ThreeOneBar : {
-        isWinner: (payLine) => {
-            return _.isEqual(["oneBar", "oneBar", "oneBar"], payLine)
-        },
-        points:  2
+    points: 40,
+  },
+  ThreeOneBar: {
+    isWinner: (payLine) => {
+      return _.isEqual(["oneBar", "oneBar", "oneBar"], payLine);
     },
-    CherryOrSeven: {
-        isWinner: (payLine) => {
-            let hasCherry = _.indexOf(payLine, "cherry") != -1; 
-            let hasSeven = _.indexOf(payLine, "seven") != -1;
-            return hasCherry && hasSeven;
-        },
-        points: 20
-    }
+    points: 20,
+  },
+  CherryOrSeven: {
+    isWinner: (payLine) => {
+      let hasCherry = _.indexOf(payLine, "cherry") != -1;
+      let hasSeven = _.indexOf(payLine, "seven") != -1;
+      return hasCherry && hasSeven;
+    },
+    points: 150,
+  },
 };
 
 const calculatePoints = (payLine) => {
-    const selectedReelTitles = _.flatMap(payLine, (reelItem) => {return reelItem.title});
-    let pointsAwareded = 0;
-    _.mapValues(winningOptions, (option) => {
-        let isWinner = option.isWinner(selectedReelTitles);
-        if (isWinner){
-            pointsAwareded = option.points;
-            return;
-        }
-      });
+  const selectedReelTitles = _.flatMap(payLine, (reelItem) => {
+    return reelItem.title;
+  });
+  let pointsAwareded = 0;
+  _.mapValues(winningOptions, (option) => {
+    let isWinner = option.isWinner(selectedReelTitles);
+    if (isWinner) {
+      pointsAwareded = option.points;
+      return;
+    }
+  });
 
-    return pointsAwareded;
+  return pointsAwareded;
 };
 
 /*
@@ -109,5 +111,5 @@ const toggleBlinking = (turnOn = false) =>{
 };
 */
 const updateCreditText = (value) => {
-    document.getElementById("totalCredits").innerHTML = `$${value}`;
+  document.getElementById("totalCredits").innerHTML = `$${value}`;
 };
