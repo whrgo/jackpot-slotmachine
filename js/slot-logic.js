@@ -87,6 +87,7 @@ const winningOptions = {
       let hasSeven = _.indexOf(payLine, "seven") != -1;
       return hasCherry && hasSeven;
     },
+    points: 3000,
   },
 };
 
