@@ -80,6 +80,14 @@ const winningOptions = {
     },
     points: 150,
   },
+  CherryOrSevenCherry: {
+    // 체리 2개 7 1개
+    isWinner: (payLine) => {
+      let hasCherry = _.indexOf(payLine, "cherry") === 2;
+      let hasSeven = _.indexOf(payLine, "seven") != -1;
+      return hasCherry && hasSeven;
+    },
+  },
 };
 
 const calculatePoints = (payLine) => {
