@@ -5,7 +5,7 @@ let playFlag = false;
 
 function checkCredit(credits) {
   if (totalCredits < credits) {
-    cusAlert("your credits is not enough!");
+    cusAlert("크레딧이 부족합니다!");
 
     //alert("your credits is not enough!");   //your credits is not enough alert!!!
     document.getElementById("blind").style.visibility = "visible";
@@ -127,34 +127,6 @@ window.onload = function () {
   };
 
   //Set all button events
-  document.getElementById("1play").addEventListener("click", function (event) {
-    dealCredit = 1;
-    if (!playFlag && checkCredit(dealCredit)) {
-      playFlag = true;
-      slot.play();
-    }
-  });
-  document.getElementById("5play").addEventListener("click", function (event) {
-    dealCredit = 5;
-    if (!playFlag && checkCredit(dealCredit)) {
-      playFlag = true;
-      slot.play();
-    }
-  });
-  document.getElementById("10play").addEventListener("click", function (event) {
-    dealCredit = 10;
-    if (!playFlag && checkCredit(dealCredit)) {
-      playFlag = true;
-      slot.play();
-    }
-  });
-  document.getElementById("50play").addEventListener("click", function (event) {
-    dealCredit = 50;
-    if (!playFlag && checkCredit(dealCredit)) {
-      playFlag = true;
-      slot.play();
-    }
-  });
   document
     .getElementById("100play")
     .addEventListener("click", function (event) {
@@ -173,6 +145,33 @@ window.onload = function () {
         slot.play();
       }
     });
+  document
+    .getElementById("5000play")
+    .addEventListener("click", function (event) {
+      dealCredit = 5000;
+      if (!playFlag && checkCredit(dealCredit)) {
+        playFlag = true;
+        slot.play();
+      }
+    });
+  document
+    .getElementById("10000play")
+    .addEventListener("click", function (event) {
+      dealCredit = 10000;
+      if (!playFlag && checkCredit(dealCredit)) {
+        playFlag = true;
+        slot.play();
+      }
+    });
+  document
+    .getElementById("100000play")
+    .addEventListener("click", function (event) {
+      dealCredit = 100000;
+      if (!playFlag && checkCredit(dealCredit)) {
+        playFlag = true;
+        slot.play();
+      }
+    });
 
   //reset
   document
@@ -182,7 +181,9 @@ window.onload = function () {
 
       if (!playFlag) {
         totalCredits = defaultCreditAmount;
-        cusAlert("Now Credit is " + defaultCreditAmount + "$");
+        cusAlert(
+          "크레딧이 " + defaultCreditAmount + "$" + " 로 초기화 되었습니다"
+        );
 
         updateCreditText(totalCredits);
 
