@@ -44,15 +44,6 @@ function setSize() {
   }
 }
 
-function blinkBox(turnOn, className) {
-  if (turnOn) {
-    document.getElementById(className).classList.add("blink");
-  } else {
-    //document.getElementById("earn-img-box").style.visibility = "hidden"
-    document.getElementById(className).classList.remove("blink");
-  }
-}
-
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 //On load set up slotmachine object and pass in a callback function
 //when slot results come out to update balance
@@ -76,32 +67,18 @@ window.onload = function () {
     setSize();
   });
 
-  blinkBox(false, "earn-img-box150");
-  blinkBox(false, "earn-img-box50");
-  blinkBox(false, "earn-img-box20");
-  blinkBox(false, "earn-img-box10");
-  blinkBox(false, "earn-img-box5");
-  blinkBox(false, "earn-img-box2");
-
   const callbackPostSpin = function (payLine) {
-    blinkBox(false, "earn-img-box150");
-    blinkBox(false, "earn-img-box50");
-    blinkBox(false, "earn-img-box20");
-    blinkBox(false, "earn-img-box10");
-    blinkBox(false, "earn-img-box5");
-    blinkBox(false, "earn-img-box2");
-
     const pointsWon = calculatePoints(payLine);
 
     setTimeout(function () {
       playFlag = false;
 
       if (pointsWon > 0) {
-        cusAlert(pointsWon * dealCredit + "$ win!");
+        cusAlert(
+          "게임에서 승리해 " + pointsWon * dealCredit + "$ 를 얻었습니다!"
+        );
 
         updateCredits(pointsWon * dealCredit);
-
-        blinkBox(true, "earn-img-box" + pointsWon);
       }
     }, 4000);
   };

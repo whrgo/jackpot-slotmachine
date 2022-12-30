@@ -7,7 +7,7 @@
  *  http://www.opensource.org/licenses/mit-license.php
  */
 
-'use strict';
+"use strict";
 
 /**
  * @param {Element} container
@@ -31,14 +31,12 @@ function SlotMachine(container, reels, callback, options) {
   var defaults = {
     reelHeight: 1000,
     reelWidth: 200,
-    reelOffset: 40,
+    reelOffset: 20,
     slotYAxis: 0,
-    animSpeed: 1000,
     rngFunc: function rngFunc() {
-
       // The weakest link.
       return Math.random();
-    }
+    },
   };
 
   (function () {
@@ -47,7 +45,7 @@ function SlotMachine(container, reels, callback, options) {
     if (reels.length > 0) {
       initGame();
     } else {
-      throw new Error('Failed to initialize (missing reels)');
+      throw new Error("Failed to initialize (missing reels)");
     }
   })();
 
@@ -63,13 +61,13 @@ function SlotMachine(container, reels, callback, options) {
    * Create display elements.
    */
   function createDisplayElm() {
-    var div = document.createElement('div');
-    div.classList.add('display');
+    var div = document.createElement("div");
+    div.classList.add("display");
 
     for (var i = 0; i < reels.length; i++) {
-      var elm = document.createElement('div');
-      elm.style.transform = 'rotateY(' + self.options.slotYAxis + 'deg)';
-      elm.classList.add('reel');
+      var elm = document.createElement("div");
+      elm.style.transform = "rotateY(" + self.options.slotYAxis + "deg)";
+      elm.classList.add("reel");
 
       div.appendChild(elm);
     }
@@ -87,8 +85,8 @@ function SlotMachine(container, reels, callback, options) {
    * Create slot elements.
    */
   function createSlotElm() {
-    var div = document.createElement('div');
-    div.classList.add('slots');
+    var div = document.createElement("div");
+    div.classList.add("slots");
 
     reels.forEach(function (reel) {
       var elm = createReelElm(reel, reel.symbols[0].position);
@@ -111,15 +109,16 @@ function SlotMachine(container, reels, callback, options) {
    * @return {Element}
    */
   function createReelElm(config) {
-    var startPos = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
+    var startPos =
+      arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
 
-    var div = document.createElement('div');
-    div.style.transform = 'rotateY(' + self.options.slotYAxis + 'deg)';
-    div.classList.add('reel');
+    var div = document.createElement("div");
+    div.style.transform = "rotateY(" + self.options.slotYAxis + "deg)";
+    div.classList.add("reel");
 
     var elm = createStripElm(config, config.symbols[0].position);
 
-    config['element'] = elm;
+    config["element"] = elm;
 
     div.appendChild(elm);
 
@@ -138,35 +137,39 @@ function SlotMachine(container, reels, callback, options) {
    * @return {Element}
    */
   function createStripElm(config) {
-    var startPos = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
+    var startPos =
+      arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
 
     var stripHeight = getStripHeight();
     var stripWidth = getStripWidth();
 
     var segmentDeg = 360 / REEL_SEGMENT_TOTAL;
 
-    var transZ = Math.trunc(Math.tan(90 / Math.PI - segmentDeg) * (stripHeight * 0.5) * 4);
+    var transZ = Math.trunc(
+      Math.tan(90 / Math.PI - segmentDeg) * (stripHeight * 0.5) * 4
+    );
 
     var marginTop = transZ + stripHeight / 2;
 
-    var ul = document.createElement('ul');
-    ul.style.height = stripHeight + 'px';
-    ul.style.marginTop = marginTop + 'px';
-    ul.style.width = stripWidth + 'px';
-    ul.classList.add('strip');
+    var ul = document.createElement("ul");
+    ul.style.height = stripHeight + "px";
+    ul.style.marginTop = marginTop + "px";
+    ul.style.width = stripWidth + "px";
+    ul.classList.add("strip");
 
     for (var i = 0; i < REEL_SEGMENT_TOTAL; i++) {
-      var li = document.createElement('li');
+      var li = document.createElement("li");
       li.append(i.toString());
 
       var imgPosY = getImagePosY(i, startPos);
       var rotateX = REEL_SEGMENT_TOTAL * segmentDeg - i * segmentDeg;
 
       // Position image per the strip angle/container radius.
-      li.style.background = 'url(' + config.imageSrc + ') 0 ' + imgPosY + 'px';
-      li.style.height = stripHeight + 'px';
-      li.style.width = stripWidth + 'px';
-      li.style.transform = 'rotateX(' + rotateX + 'deg) translateZ(' + transZ + 'px)';
+      li.style.background = "url(" + config.imageSrc + ") 0 " + imgPosY + "px";
+      li.style.height = stripHeight + "px";
+      li.style.width = stripWidth + "px";
+      li.style.transform =
+        "rotateX(" + rotateX + "deg) translateZ(" + transZ + "px)";
 
       ul.appendChild(li);
     }
@@ -214,11 +217,11 @@ function SlotMachine(container, reels, callback, options) {
    * @return {object}
    */
   function getSlotMachineValue(reel) {
-    const defaultValue = self.defaultSelections?.pop()
-    if (defaultValue){
+    const defaultValue = self.defaultSelections?.pop();
+    if (defaultValue) {
       return reel.symbols[defaultValue];
-    }else{
-      return selectRandSymbol(reel.symbols); 
+    } else {
+      return selectRandSymbol(reel.symbols);
     }
   }
 
@@ -231,35 +234,33 @@ function SlotMachine(container, reels, callback, options) {
     let timeAfterFirstSpin = 500;
 
     reels.forEach(function (reel) {
-      var selected = getSlotMachineValue(reel);//selectRandSymbol(reel.symbols);
+      var selected = getSlotMachineValue(reel); //selectRandSymbol(reel.symbols);
       var startPos = selected.position;
 
       payLine.push(selected);
 
       // Start the rotation animation.
       var elm = reel.element;
-      elm.classList.remove('stop');
-      elm.classList.toggle('spin');
+      elm.classList.remove("stop");
+      elm.classList.toggle("spin");
 
       // Shift images to select position.
       elm.childNodes.forEach(function (li, index) {
-        li.style.backgroundPositionY = getImagePosY(index, startPos) + 'px';
+        li.style.backgroundPositionY = getImagePosY(index, startPos) + "px";
       });
 
       // Randomly stop rotation animation.
       var timer = window.setTimeout(function () {
-        elm.classList.replace('spin', 'stop');
+        elm.classList.replace("spin", "stop");
         self.isAnimating = false;
         window.clearTimeout(timer);
-      }, initialSpinTime += timeAfterFirstSpin);
-
+      }, (initialSpinTime += timeAfterFirstSpin));
     });
 
     if (callback) {
       callback(payLine);
     }
   }
-
 
   /**
    * Get random number between 0 (inclusive) and 1 (exclusive).
@@ -282,7 +283,9 @@ function SlotMachine(container, reels, callback, options) {
    * @return {Number}
    */
   function getImagePosY(index, position) {
-    return -Math.abs(getStripHeight() * index + (position - self.options.reelOffset));
+    return -Math.abs(
+      getStripHeight() * index + (position - self.options.reelOffset)
+    );
   }
 
   /**
@@ -332,7 +335,7 @@ window.slotMachine = function (container, reels, callback, options) {
   return new SlotMachine(container, reels, callback, options);
 };
 
-if (typeof module !== 'undefined' && module.exports) {
+if (typeof module !== "undefined" && module.exports) {
   module.exports = SlotMachine;
 }
 //# sourceMappingURL=slot-machine.js.map
