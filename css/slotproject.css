@@ -1,22 +1,22 @@
-body{
+body {
   margin: 0px;
   left: 0px;
   padding: 0px;
 
   background: #1f513b;
-  background: linear-gradient(to top , #000, #1f513b) fixed;
+  background: linear-gradient(to top, #000, #1f513b) fixed;
 }
 
-#blind{
+#blind {
   position: absolute;
   visibility: hidden;
   background: #ff1111;
-  width: 100%; 
-  height: 100%; 
+  width: 100%;
+  height: 100%;
   z-index: 99;
   margin: 0px;
   padding: 0px;
-  top:  0px;
+  top: 0px;
 }
 
 /*
@@ -48,7 +48,7 @@ body{
 }
 */
 
-#content{
+#content {
   margin: 10px;
 }
 
@@ -59,21 +59,19 @@ body{
   margin: 0px;
   padding: 0px;
   left: 0px;
-
 }
-
 
 #slot_machine_box {
   /*margin: 5% auto 0 auto;
   */
-  positon :relative;
+  positon: relative;
   /*background-color: #888;*/
   padding: 0px;
   width: 600px;
   margin: 0px;
 
-  -webkit-transform-origin:0% 10%;
-  transform-origin:0% 10%;
+  -webkit-transform-origin: 0% 10%;
+  transform-origin: 0% 10%;
 }
 
 #slot_machine_img {
@@ -82,7 +80,6 @@ body{
   left: 0px;
   padding: 0px;
   margin: 0px;
-
 }
 
 #slot-machine {
@@ -102,45 +99,40 @@ body{
   font-size: 20px;
 }
 
-#resetBtn{
+#resetBtn {
   position: absolute;
   top: 0px;
-
 }
 
 #resetBtn:active {
   transform: scale(0.95);
 }
 
-
-
-.spinBtnBox{
+.spinBtnBox {
   display: inline-block;
   position: relative;
 
   margin: 15px 2px;
 }
 
-.spinBtnDiv{
+.spinBtnDiv {
   position: relative;
 }
 
-.spinBtn{
+.spinBtn {
   height: 70px;
   width: 200px;
   margin: 10px;
   position: relative;
 }
 
-.spinBtnCredit{
-  position: absolute; 
-  top:22px; 
-  left:45px; 
-  font-size: 30px; 
-  color:#fff
+.spinBtnCredit {
+  position: absolute;
+  top: 22px;
+  left: 45px;
+  font-size: 30px;
+  color: #fff;
 }
-
-
 
 .wager {
   width: 90px;
@@ -152,19 +144,24 @@ body{
 }
 
 .wager-clickable:hover {
-  transform: scale(1.10);
+  transform: scale(1.1);
 }
 
-.spinBtn:active{
+.spinBtn:active {
   transform: scale(0.9);
 }
 
-#earn-div{
+#earn-div {
   margin-top: 0px;
   margin-bottom: 5px;
 }
 
-#earn-img-box150, #earn-img-box50, #earn-img-box20, #earn-img-box10, #earn-img-box5,  #earn-img-box2{
+#earn-img-box150,
+#earn-img-box50,
+#earn-img-box20,
+#earn-img-box10,
+#earn-img-box5,
+#earn-img-box2 {
   display: inline-block;
   width: 120px;
   height: 20px;
@@ -177,19 +174,23 @@ body{
   box-shadow: 1px 1px 3px 1px;
 }
 
-#earn-img-box150:hover, #earn-img-box50:hover, #earn-img-box20:hover, #earn-img-box10:hover, #earn-img-box5:hover,  #earn-img-box2:hover{
+#earn-img-box150:hover,
+#earn-img-box50:hover,
+#earn-img-box20:hover,
+#earn-img-box10:hover,
+#earn-img-box5:hover,
+#earn-img-box2:hover {
   transform: scale(1.2);
 }
 
-#earn-table{
-  
+#earn-table {
 }
 
-#earn-img{
+#earn-img {
   height: 20px;
 }
 
-#earn-lb{
+#earn-lb {
   font-size: 15px;
   font-family: sans-serif;
   font-weight: bold;
@@ -198,12 +199,9 @@ body{
   line-height: 20px;
 }
 
-#earn{
-
+#earn {
   display: inline-block;
 }
-
-
 
 /*  
 #playButton, #playButtonFixed {
@@ -211,77 +209,3 @@ body{
   margin: 0 auto;    
 }
 */
-
-  .blink {
-    -webkit-animation: blink-text 800ms linear infinite;
-    -moz-animation: blink-text 800ms linear infinite;
-    -ms-animation: blink-text 800ms linear infinite;
-    -o-animation: blink-text 800ms linear infinite;
-     animation: blink-text 1000ms linear infinite;
-    visibility: visible; 
-  }
-  @-webkit-keyframes blink-text {
-    0% { color: black; opacity: 1; }
-    20% { color: black;opacity: .8; }
-    30% { color: black;opacity: .6; }
-    40% { color: black;opacity: .4; }
-    50% { color: black;opacity: .2; }
-    60% { color: black;opacity: 0; }
-    70% { color: black;opacity: .2; }
-    80% { color: black;opacity: .4; }
-    90% { color: black;opacity: .6; }
-    98% { color: black;opacity: .8; }
-    100% { color: black;opacity: 1; }
-  }
-  @-moz-keyframes blink-text {
-    0% { color: black; opacity: 1; }
-    20% { color: black;opacity: .8; }
-    30% { color: black;opacity: .6; }
-    40% { color: black;opacity: .4; }
-    50% { color: black;opacity: .2; }
-    60% { color: black;opacity: 0; }
-    70% { color: black;opacity: .2; }
-    80% { color: black;opacity: .4; }
-    90% { color: black;opacity: .6; }
-    98% { color: black;opacity: .8; }
-    100% { color: black;opacity: 1; }
-  }
-  @-ms-keyframes blink-text {
-    0% { color: black; opacity: 1; }
-    20% { color: black;opacity: .8; }
-    30% { color: black;opacity: .6; }
-    40% { color: black;opacity: .4; }
-    50% { color: black;opacity: .2; }
-    60% { color: black;opacity: 0; }
-    70% { color: black;opacity: .2; }
-    80% { color: black;opacity: .4; }
-    90% { color: black;opacity: .6; }
-    98% { color: black;opacity: .8; }
-    100% { color: black;opacity: 1; }
-  }
-  @-o-keyframes blink-text {
-    0% { color: black; opacity: 1; }
-    20% { color: black;opacity: .8; }
-    30% { color: black;opacity: .6; }
-    40% { color: black;opacity: .4; }
-    50% { color: black;opacity: .2; }
-    60% { color: black;opacity: 0; }
-    70% { color: black;opacity: .2; }
-    80% { color: black;opacity: .4; }
-    90% { color: black;opacity: .6; }
-    98% { color: black;opacity: .8; }
-    100% { color: black;opacity: 1; }
-  }
-  @keyframes blink-text {
-    0% { color: black; opacity: 1; }
-    20% { color: black;opacity: .8; }
-    30% { color: black;opacity: .6; }
-    40% { color: black;opacity: .4; }
-    50% { color: black;opacity: .2; }
-    60% { color: black;opacity: 0; }
-    70% { color: black;opacity: .2; }
-    80% { color: black;opacity: .4; }
-    90% { color: black;opacity: .6; }
-    98% { color: black;opacity: .8; }
-    100% { color: black;opacity: 1; }
-  }
