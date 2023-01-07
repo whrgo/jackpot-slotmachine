@@ -2,9 +2,6 @@ body {
   margin: 0px;
   left: 0px;
   padding: 0px;
-
-  background: #1f513b;
-  background: linear-gradient(to top, #000, #1f513b) fixed;
 }
 
 #blind {

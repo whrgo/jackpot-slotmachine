@@ -16,6 +16,7 @@
         min-height: 640px;
         */
         padding: 0px;
+        background: linear-gradient(to top, #000, #1f513b) fixed;
       }
 
       a:link {
@@ -37,14 +38,6 @@
         background: #eee;
       }
 
-      .ad {
-        width: 100%;
-        height: 50px;
-        margin: 0px;
-        padding: 0px;
-        border: 0px;
-      }
-
       .box {
         margin: 0px;
         top: 0px;
@@ -55,8 +48,54 @@
         left: 0px;
       }
     </style>
+    <!-- navbar style -->
+    <style>
+      /* get font */
+      @import url("https://fonts.googleapis.com/css2?family=Prosto+One&display=swap");
+
+      .navbar {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: black;
+
+        font-family: "Prosto One", cursive;
+      }
+      .navbar li {
+        float: left;
+        color: white;
+      }
+      .navbar li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+      }
+      .navbar li a:hover {
+        background-color: darksalmon;
+      }
+    </style>
+    <script>
+      const contact = document.getElementById("navbar-contact");
+      contact.addEventListener("mouseover", function mouseover() {
+        document.createElement("div");
+        console.log("hello");
+      });
+    </script>
   </head>
   <body>
+    <ul class="navbar">
+      <li>
+        <a href="https://github.com/whrgo/jackpot-slotmachine" target="_blank"
+          >Github</a
+        >
+      </li>
+      <li>
+        <a id="navbar-contact" href="https://discord.gg/8FSbEWpYXP">Contact</a>
+      </li>
+    </ul>
     <iframe class="box" id="" src="main.html"></iframe>
   </body>
 </html>
